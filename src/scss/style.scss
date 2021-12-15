@@ -1,0 +1,22 @@
+// Fonts
+@import 'base/fonts';
+
+// Variables
+@import 'abstract/variables';
+
+// Mixins
+@import 'abstract/mixins';
+
+// Functions
+@import 'abstract/functions';
+
+html {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font: 40px 'Ubuntu Regular';
+  color: $secondary-color;
+}
