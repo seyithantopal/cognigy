@@ -8,7 +8,7 @@ const Message: FC<{message: MessageType}> = ({ message }) => {
   const classes = useStyles();
   return (
     <div className={
-      ID === message.sender ? `${classes.chat} ${classes.mine}` : `${classes.chat} ${classes.theirs}`
+      ID !== message.isBot ? `${classes.chat} ${classes.mine}` : `${classes.chat} ${classes.theirs}`
     }
     >
       {message.message}
