@@ -8,6 +8,7 @@
     // "no-tabs": 0,
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
+    "no-console": ["error", { "allow": ["log"] }],
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }

@@ -1,26 +1,28 @@
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
-  chatboxWrapper: {
+  wrapper: {
     backgroundColor: '#eee',
-    padding: 10,
-    /* height: '100%',
-    display: 'flex',
-    flexFlow: 'column',
-    overflow: 'hidden', */
   },
+  chatboxWrapper: {},
   textfieldWrapper: {
+    marginTop: 20,
+  },
+  historyWrapper: {
+    flex: '1 1 auto',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    overflowY: 'auto',
+    height: 500,
+    gap: 3,
+  },
+  form: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     gap: 15,
-  },
-  historyWrapper: {
-    flex: '1 1 20%',
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'auto',
   },
 }));
 

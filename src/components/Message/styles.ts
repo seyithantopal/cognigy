@@ -2,7 +2,7 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
   chat: {
-    flex: '1 1 auto',
+    flex: '1 1 1',
     maxWidth: '40%', /* this will make it not exceed 80% and then wrap */
     borderRadius: 10,
     padding: 10,

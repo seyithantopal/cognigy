@@ -1,5 +1,4 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
+import React, { FC, useState } from 'react';
 import SendIcon from '@mui/icons-material/Send';
 import useStyles from './styles';
 import { MessageType } from '../../types/interfaces';
@@ -22,22 +21,48 @@ const chat = [
   },
   {
     id: 3,
+    sender: 2,
+    receiver: 1,
+    message: 'Good to hear from you',
+  },
+  {
+    id: 4,
     sender: 1,
     receiver: 2,
     message: 'How are you! I just wanted to reach out to you since I haven\'t heard anything from you.',
   },
+  {
+    id: 5,
+    sender: 1,
+    receiver: 2,
+    message: 'Hello, you there??',
+  },
+
 ];
-const Chat = () => {
+const Chat: FC = () => {
   const classes = useStyles();
+  const [message, setMessage] = useState<string>('');
+
+  const handleSendMessage = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    console.log('Message sent', message);
+  };
+
+  const handleChangeMessage = (msg: string) => {
+    setMessage(msg);
+  };
   return (
-    <div className={classes.chatboxWrapper}>
-      <h1>Chat component</h1>
-      <div className={classes.historyWrapper}>
-        {chat.map((e: MessageType) => <Message message={e} key={e.id} />)}
-      </div>
-      <div className={classes.textfieldWrapper}>
-        <TextBox />
-        <SendIcon />
+    <div className={classes.wrapper}>
+      <div className={classes.chatboxWrapper}>
+        <div className={classes.historyWrapper}>
+          {chat.map((e: MessageType) => <Message message={e} key={e.id} />)}
+        </div>
+        <div className={classes.textfieldWrapper}>
+          <form onSubmit={handleSendMessage} className={classes.form}>
+            <TextBox onChangeText={handleChangeMessage} />
+            <SendIcon onClick={handleSendMessage} />
+          </form>
+        </div>
       </div>
     </div>
   );
