@@ -1,12 +1,12 @@
-﻿# Webpack 4 Boilerplate
+# cognigy
  
- Webpack 4 boilerplate using Babel, ESLint and SASS with optimized production build.
+ This is a coding challenge for a company called Cognigy.
 
 ## Installation
 
 ```
-$ git clone https://github.com/seyithantopal/webpack-boilerplate.git
-$ cd webpack-boilerplate
+$ git clone https://github.com/seyithantopal/cognigy.git
+$ cd cognigy
 $ npm install
 ```
 
@@ -22,9 +22,7 @@ $ npm start
 ##### Assets Source
 
 * _SASS_ files are located under `src/scss`
-* _JavaScript_ files with support of _ES6+_ files are located under `src/js`
-* _Image_ files are located under `src/images`
-* _Font_ files are located under `src/fonts`
+* _Font_ files are located under `src/assets/fonts`
 
 You can view the development server by default at `localhost:3000`.
 
