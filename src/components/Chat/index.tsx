@@ -5,21 +5,16 @@ import React, {
   useRef,
 } from 'react';
 import { SocketClient } from '@cognigy/socket-client';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import SendIcon from '@mui/icons-material/Send';
 import IconButton from '@mui/material/IconButton';
 import { v4 as uuidv4 } from 'uuid';
 import { MessageType, OutputType } from '../../types/interfaces';
 import { sendMessage } from '../../store/actions/messageActions';
+import { useTypedSelector } from '../../hooks/useTypeSelector';
 import useStyles from './styles';
 import Message from '../Message';
 import TextBox from '../TextBox';
-
-/* type Props = {
-  state: {
-    message:
-  };
-}; */
 
 const Chat: FC = () => {
   const dispatch = useDispatch();
@@ -27,7 +22,7 @@ const Chat: FC = () => {
   const chatBottomRef = useRef(null);
   const [message, setMessage] = useState<string>('');
   const [socketClient, setSocketClient] = useState<any>();
-  const { messages } = useSelector((state) => state.message);
+  const { messages } = useTypedSelector((state) => state.message);
 
   useEffect(() => {
     chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
