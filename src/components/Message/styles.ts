@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
     fontSize: 14,
     textAlign: 'left',
     lineHeight: 1.3,
+    wordWrap: 'break-word',
   },
   theirs: {
     alignSelf: 'flex-start',
