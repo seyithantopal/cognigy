@@ -28,6 +28,12 @@ const useStyles = makeStyles(() => ({
     backgroundColor: COLOR_CHAT_MINE_BACKGROUND,
     color: COLOR_CHAT_MINE_TEXT,
   },
+  image: {
+    width: '100%',
+    height: 'auto',
+    marginTop: 5,
+    borderRadius: 10,
+  },
 }));
 
 export default useStyles;

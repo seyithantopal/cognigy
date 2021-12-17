@@ -38,7 +38,10 @@ const Chat: FC = () => {
         const msg = {
           id: uuidv4(),
           isBot: 1,
-          message: output.text,
+          message: {
+            text: output.text,
+            data: output.data,
+          },
         };
         dispatch(sendMessage(msg));
       });
@@ -61,7 +64,9 @@ const Chat: FC = () => {
       const msg = {
         id: uuidv4(),
         isBot: 0,
-        message,
+        message: {
+          text: message,
+        },
       };
       dispatch(sendMessage(msg));
       setMessage('');

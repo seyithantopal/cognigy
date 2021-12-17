@@ -11,7 +11,8 @@ const Message: FC<{message: MessageType}> = ({ message }) => {
       ID !== message.isBot ? `${classes.chat} ${classes.mine}` : `${classes.chat} ${classes.theirs}`
     }
     >
-      {message.message}
+      {message.message.text}
+      {(message.isBot && message.message.data.imgSrc) ? <img className={classes.image} src={message.message.data.imgSrc} alt="Chat" /> : ''}
     </div>
   );
 };

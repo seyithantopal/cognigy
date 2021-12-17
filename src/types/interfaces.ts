@@ -1,7 +1,12 @@
 export interface MessageType {
   id: string;
   isBot: number;
-  message: string;
+  message: {
+    text: string;
+    data?: {
+      imgSrc?: string;
+    };
+  };
 }
 
 export interface OutputType {
@@ -11,7 +16,6 @@ export interface OutputType {
   text: string;
   traceId: string;
 }
-
 
 export interface IAction {
   type: string;
