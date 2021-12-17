@@ -1,7 +1,13 @@
-import React, { FC, useState, useEffect, useRef } from 'react';
+import React, {
+  FC,
+  useState,
+  useEffect,
+  useRef,
+} from 'react';
 import { SocketClient } from '@cognigy/socket-client';
 import { useDispatch, useSelector } from 'react-redux';
 import SendIcon from '@mui/icons-material/Send';
+import IconButton from '@mui/material/IconButton';
 import { MessageType, OutputType } from '../../types/interfaces';
 import { sendMessage } from '../../store/actions/messageActions';
 import useStyles from './styles';
@@ -79,7 +85,9 @@ const Chat: FC = () => {
         <div className={classes.textfieldWrapper}>
           <form onSubmit={handleSendMessage} className={classes.form}>
             <TextBox value={message} onChangeText={handleChangeMessage} />
-            <SendIcon onClick={handleSendMessage} />
+            <IconButton onClick={handleSendMessage}>
+              <SendIcon color="secondary" />
+            </IconButton>
           </form>
         </div>
       </div>

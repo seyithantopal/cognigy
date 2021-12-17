@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import Chat from '../../components/Chat';
+import useStyles from './styles';
 
 const Home: FC = () => {
+  const classes = useStyles();
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className={classes.wrapper}>
       <Chat />
     </div>
   );

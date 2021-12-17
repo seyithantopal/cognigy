@@ -1,9 +1,19 @@
 import { makeStyles } from '@mui/styles';
-import { COLOR_CHAT_BACKGROUND, COLOR_SCROLLBAR_THUMB, COLOR_SCROLLBAR_THUMB_HOVER, COLOR_SCROLLBAR_TRACK } from '../../utils/constants/color';
+import {
+  COLOR_CHAT_BACKGROUND,
+  COLOR_SCROLLBAR_THUMB,
+  COLOR_SCROLLBAR_THUMB_HOVER,
+  COLOR_SCROLLBAR_TRACK,
+  COLOR_CHAT_BACKGROUND_SHADOW,
+} from '../../utils/constants/color';
 
 const useStyles = makeStyles(() => ({
   wrapper: {
     backgroundColor: COLOR_CHAT_BACKGROUND,
+    padding: 10,
+    borderRadius: 10,
+    boxShadow: `0 0 10px 0 ${COLOR_CHAT_BACKGROUND_SHADOW}`,
+    width: '100%',
   },
   chatboxWrapper: {},
   textfieldWrapper: {
