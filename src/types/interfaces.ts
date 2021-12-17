@@ -1,5 +1,5 @@
 export interface MessageType {
-  id: number;
+  id: string;
   isBot: number;
   message: string;
 }

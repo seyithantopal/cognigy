@@ -8,6 +8,7 @@ import { SocketClient } from '@cognigy/socket-client';
 import { useDispatch, useSelector } from 'react-redux';
 import SendIcon from '@mui/icons-material/Send';
 import IconButton from '@mui/material/IconButton';
+import { v4 as uuidv4 } from 'uuid';
 import { MessageType, OutputType } from '../../types/interfaces';
 import { sendMessage } from '../../store/actions/messageActions';
 import useStyles from './styles';
@@ -40,7 +41,7 @@ const Chat: FC = () => {
 
       client.on('output', (output: OutputType) => {
         const msg = {
-          id: (messages.length + 1),
+          id: uuidv4(),
           isBot: 1,
           message: output.text,
         };
@@ -63,7 +64,7 @@ const Chat: FC = () => {
     if (message !== '') {
       socketClient.sendMessage(message);
       const msg = {
-        id: (messages.length + 1),
+        id: uuidv4(),
         isBot: 0,
         message,
       };
