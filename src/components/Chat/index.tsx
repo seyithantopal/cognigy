@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import { SocketClient } from '@cognigy/socket-client';
 import { useDispatch, useSelector } from 'react-redux';
 import SendIcon from '@mui/icons-material/Send';
@@ -17,9 +17,14 @@ import TextBox from '../TextBox';
 const Chat: FC = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  const chatBottomRef = useRef(null);
   const [message, setMessage] = useState<string>('');
   const [socketClient, setSocketClient] = useState<any>();
   const { messages } = useSelector((state) => state.message);
+
+  useEffect(() => {
+    chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const initializeSocketClient = async () => {
     try {
@@ -69,6 +74,7 @@ const Chat: FC = () => {
       <div className={classes.chatboxWrapper}>
         <div className={classes.historyWrapper}>
           {messages.map((e: MessageType) => <Message message={e} key={e.id} />)}
+          <div ref={chatBottomRef} />
         </div>
         <div className={classes.textfieldWrapper}>
           <form onSubmit={handleSendMessage} className={classes.form}>

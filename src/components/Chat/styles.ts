@@ -1,8 +1,9 @@
 import { makeStyles } from '@mui/styles';
+import { COLOR_CHAT_BACKGROUND } from '../../utils/constants/color';
 
 const useStyles = makeStyles(() => ({
   wrapper: {
-    backgroundColor: '#eee',
+    backgroundColor: COLOR_CHAT_BACKGROUND,
   },
   chatboxWrapper: {},
   textfieldWrapper: {
@@ -16,6 +17,7 @@ const useStyles = makeStyles(() => ({
     overflowY: 'auto',
     height: 500,
     gap: 3,
+    padding: 10,
   },
   form: {
     display: 'flex',

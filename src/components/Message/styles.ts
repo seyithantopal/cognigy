@@ -1,9 +1,15 @@
 import { makeStyles } from '@mui/styles';
+import {
+  COLOR_CHAT_MINE_BACKGROUND,
+  COLOR_CHAT_MINE_TEXT,
+  COLOR_CHAT_THEIRS_BACKGROUND,
+  COLOR_CHAT_THEIRS_TEXT,
+} from '../../utils/constants/color';
 
 const useStyles = makeStyles(() => ({
   chat: {
     flex: '1 1 1',
-    maxWidth: '40%', /* this will make it not exceed 80% and then wrap */
+    maxWidth: '40%',
     borderRadius: 10,
     padding: 10,
     fontFamily: 'Ubuntu Regular',
@@ -13,13 +19,13 @@ const useStyles = makeStyles(() => ({
   },
   theirs: {
     alignSelf: 'flex-start',
-    backgroundColor: '#4d38a3',
-    color: '#fff',
+    backgroundColor: COLOR_CHAT_THEIRS_BACKGROUND,
+    color: COLOR_CHAT_THEIRS_TEXT,
   },
   mine: {
     alignSelf: 'flex-end',
-    backgroundColor: '#406e7d',
-    color: '#fff',
+    backgroundColor: COLOR_CHAT_MINE_BACKGROUND,
+    color: COLOR_CHAT_MINE_TEXT,
   },
 }));
 
